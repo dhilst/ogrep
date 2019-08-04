@@ -1,3 +1,0 @@
-(executable
-  (name ogrep)
-  (libraries core str))
