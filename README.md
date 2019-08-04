@@ -18,9 +18,13 @@ ogrep pattern
 
 It will search for pattern recurisvelly from the current folder
 
-# Ignoring
+# Including & Ignoring
 
+The `.ogrepinclude` can be used to include file patterns
 The `.ogrepignore` can be used to ignore file patterns
+
+`ogpre` will only search on files that match patterns from `.ogrepinclude` or that not match `.ogrepignore`. You can use include pattern to narrow by extensions
+and ingore patterns to ignore paths
 
 # Using with vim-fzf
 

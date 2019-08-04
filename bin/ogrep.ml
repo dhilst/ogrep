@@ -66,9 +66,9 @@ let () =
       try ignore (search_forward pattern filename 0); false
       with Caml.Not_found -> true
     ) in
-  let grep_included_or_not_ignored filename =
-    (if included filename || not_ignored filename then grep pat filename) in
+  let grep_included_and_not_ignored filename =
+    (if included filename && not_ignored filename then grep pat filename) in
   match Unix.stat root with
     | { st_kind = S_REG; _ } -> grep pat root
-    | { st_kind = S_DIR; _ } -> walkdir root ~f:grep_included_or_not_ignored
+    | { st_kind = S_DIR; _ } -> walkdir root ~f:grep_included_and_not_ignored
     | _ -> ()
