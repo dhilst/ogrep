@@ -1,0 +1,43 @@
+(library
+  (name ogreplib)
+  (modules common)
+  (preprocess (pps lwt_ppx))
+  (libraries core lwt lwt.unix)
+  )
+
+(executable
+ (name ogrepsimple)
+ (package ogrep)
+ (modules ogrepsimple)
+ (libraries unix core str ogreplib)
+ (public_name ogrepsimple)
+ (preprocess (pps lwt_ppx))
+ )
+
+(executable
+ (name ogrepmedium)
+ (package ogrep)
+ (modules ogrepmedium)
+ (libraries lwt.unix ogreplib)
+ (public_name ogrepmedium)
+ (preprocess (pps lwt_ppx))
+ )
+
+(executable
+ (name ogreppreemptive)
+ (package ogrep)
+ (modules ogreppreemptive)
+ (libraries lwt.unix ogreplib)
+ (public_name ogreppreemtive)
+ (preprocess (pps lwt_ppx))
+ )
+
+(executable
+ (name ogrepcomplex)
+ (package ogrep)
+ (modules ogrepcomplex)
+ (libraries lwt.unix ogreplib)
+ (public_name ogrepcomplex)
+ (preprocess (pps lwt_ppx))
+ )
+
